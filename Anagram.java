@@ -45,12 +45,12 @@ public class Anagram {
 		if (newString1.length() != newString2.length()) {
 			return false;
 		}
-		for (int i = 0; i < string1.length(); i++) {
+		for (int i = 0; i < newString1.length(); i++) {
 			checkLetters = false;
-			for (int j = 0; j < string2.length(); j++) {
+			for (int j = 0; j < newString2.length(); j++) {
 				if (string1.charAt(i) == string2.charAt(j)) {
 					checkLetters = true;
-					string2 = string2.substring(0, j) + string2.substring(j+1);
+					string2 = string2.substring(0, j) + string2.substring(j + 1);
 					break;
 				}
 			}
@@ -69,14 +69,14 @@ public class Anagram {
 		for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-                str += Character.toLowerCase(c);
+				convertedString += Character.toLowerCase(c);
 			}
             else if (c == ' ') {
-                str += c;
+                convertedString += c; // append spaces to the convertedString, not str
             }
-	} 
-	return convertedString;
-}
+		} 
+		return convertedString;
+	}
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
